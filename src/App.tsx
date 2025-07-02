@@ -7,6 +7,7 @@ import { IPStrategyProcess } from './Pages/Service'
 import { Service1 } from './Pages/Service1'
 import { Service2 } from './Pages/Service2'
 import { Service3 } from './Pages/Service3'
+import { Service4 } from './Pages/Service4'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <Route path='/infringement' element={<Service1/>} />
       <Route path='/insights' element={<Service2/>} />
       <Route path='/monitization' element={<Service3/>} />
+      <Route path='/Itservices' element={<Service4/>} />
     </Routes>
 
     </>

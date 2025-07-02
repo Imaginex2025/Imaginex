@@ -162,3 +162,24 @@ body{
 body{
   overflow-x: hidden;
 }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #751169;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  display: none;
+  background-clip: content-box;
+}
+
+
