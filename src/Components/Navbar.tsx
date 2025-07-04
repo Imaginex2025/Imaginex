@@ -52,7 +52,7 @@ const Navbar = () => {
             <li className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Home</li>
           </Link>
 
-          {!hideTraining && (
+         {!hideTraining && (
               <li onClick={() => scrollToElementByIdWithOffset("inovators")} className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Training</li>
           )}
 
@@ -92,9 +92,9 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Top Bar */}
-      <div className="flex md:hidden items-center border-b border-[#2E2132] justify-between px-6  md:py-4">
+      <div className="flex md:hidden items-center border-b py-2 border-[#2E2132] justify-between px-6  md:py-4">
         <div>
-          <img src="/Logo-edit.png" alt="logo" className="h-[70px]" />
+          <img src="/Logo-edit.png" alt="logo" className="h-[50px]" />
 
         </div>
         <div className="cursor-pointer" onClick={() => setIsOpen(true)}>

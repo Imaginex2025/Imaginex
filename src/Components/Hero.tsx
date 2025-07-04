@@ -57,7 +57,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
-          <p className="font-semibold text-[32px] sm:text-[48px] lg:text-[72px] bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
+          <p className="font-semibold text-[32px] sm:text-[48px] lg:text-[64px] bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
             Welcome to<br /> THE ImagineX
           </p>
           <p className="font-medium text-[8px] sm:text-[12px] lg:text-[16px] bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">

@@ -1,28 +1,32 @@
-import { motion } from 'framer-motion';
-import FlowingMenu from '../blocks/Components/FlowingMenu/FlowingMenu';
+import { motion } from "framer-motion";
+import Card from "../Components/ui/carousel-card-1";
 
-const demoItems = [
-  { 
-    link: '#', 
-    title: 'Qualcomm',
-    description: 'Generates 60–70% of its profits from patent licensing and royalty fees.'
+const CARD_DATA = [
+  {
+    id: 1,
+    imgUrl: 'qualcomm .jpg',
+    content:
+      'Generates 60–70% of its profits from patent licensing and royalty fees.',
   },
-  { 
-    link: '#', 
-    title: 'Dolby Laboratories',
-    description: 'Earns ~90% of revenue from licensing audio and visual technologies.' 
+  {
+    id: 2,
+    imgUrl: '/Dolby.png',
+    content:
+      'Earns ~90% of revenue from licensing audio and visual technologies.',
   },
-  { 
-    link: '#', 
-    title: 'ARM Holdings',
-    description: 'Over 90% of revenue comes from licensing its patented chip architectures.'
+  {
+    id: 3,
+    imgUrl: 'Arm.jpeg',
+    content:
+      'Over 90% of revenue comes from licensing its patented chip architectures.',
   }
 ];
 
-
-const PowerPatent = () => {
+const DemoOne = () => {
   return (
-        <motion.div
+
+
+            <motion.div
       className="bg-[url('/grid-bg.svg')] bg-cover bg-center  py-[30px]  sm:py-[100px]  lg:py-[60px] flex flex-col gap-2 md:gap-5 justify-center items-center text-center"
       initial={{ opacity: 0 }}
       id="about"
@@ -52,12 +56,11 @@ const PowerPatent = () => {
         </p>
       </motion.div>
 
-    <div className='h-[200px] md:h-[300px] ' style={{ width:'100%', position: 'relative' }}>
-  <FlowingMenu items={demoItems} />
-</div>
+    <div className="flex flex-col w-full ">
+      <Card data={CARD_DATA}/>
+    </div>
     </motion.div>
+  );
+};
 
-  )
-}
-
-export default PowerPatent
+export { DemoOne };

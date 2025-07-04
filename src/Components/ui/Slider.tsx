@@ -177,7 +177,6 @@ const TechStack: React.FC<TechStackProps> = ({
   const titleComp = useMemo(
     () => (
       <motion.h3
-        variants={textVariants}
         initial="hidden"
         animate="visible"
         exit="exit"
@@ -192,7 +191,6 @@ const TechStack: React.FC<TechStackProps> = ({
   const subtitleComp = useMemo(
     () => (
       <motion.h4
-        variants={textVariants}
         initial="hidden"
         animate="visible"
         exit="exit"
@@ -207,7 +205,6 @@ const TechStack: React.FC<TechStackProps> = ({
   if (!isCondensed) {
     return (
       <motion.h3
-        variants={textVariants}
         initial="hidden"
         animate="visible"
         exit="exit"
@@ -221,7 +218,6 @@ const TechStack: React.FC<TechStackProps> = ({
   return (
     <motion.div className="tech-stack-container flex flex-row gap-3 md:gap-6 w-full">
       <motion.div
-        variants={barVariants}
         initial="hidden"
         animate="visible"
         exit="exit"
