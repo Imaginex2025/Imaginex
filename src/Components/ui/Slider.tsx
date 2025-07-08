@@ -55,9 +55,9 @@ const TechStacksScroller: React.FC = () => {
   }, [progressMotion]);
 
   const currentImage = useMemo(() => {
-    if (progress <= 100) return "/Qualcom.jpg";
-    if (progress > 100 && progress <= 200) return "/Dolby.png";
-    return "/Arm.jpeg";
+    if (progress <= 100) return "/qhd.png";
+    if (progress > 100 && progress <= 200) return "/dolby3d.png";
+    return "/final.jpg";
   }, [progress]);
 
   return (
@@ -102,7 +102,7 @@ const TechStacksScroller: React.FC = () => {
                   loadingPercentage={progress}
                   isCondensed={progress <= 100}
                   title="Qualcomm"
-                  subtitle="Around 60–70% of its profits come from patent licensing and royalty fees."
+                  subtitle="Around 21.9% of its profits come from patent licensing and royalty fees."
                   barColor="751169"
                   barBgColor="CF9FFF"
                 />
@@ -110,7 +110,7 @@ const TechStacksScroller: React.FC = () => {
                   loadingPercentage={progress % 100}
                   isCondensed={progress > 100 && progress <= 200}
                   title="Dolby Laboratories"
-                  subtitle="Earns about 90% of its revenue from licensing its patented audio and visual technologies."
+                  subtitle="Earns about 82.1% of its revenue from licensing its patented audio and visual technologies."
                   barColor="751169"
                   barBgColor="CF9FFF"
                 />
@@ -118,7 +118,7 @@ const TechStacksScroller: React.FC = () => {
                   loadingPercentage={progress % 200}
                   isCondensed={progress > 200 && progress <= 300}
                   title="ARM Holdings"
-                  subtitle="Generates over 90% of its revenue from licensing its patented chip architectures."
+                  subtitle="Generates over 100% of its revenue from licensing its patented chip architectures."
                   barColor="751169"
                   barBgColor="CF9FFF"
                 />
@@ -141,7 +141,8 @@ const TechStacksScroller: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.4 }}
-                    className="w-full h-[calc(100vh/3)] md:h-[calc(100vh/1.5)] self-center rounded-3xl object-cover object-center px-1.5"
+                    className="w-full h-auto max-h-[calc(100vh/3)] md:max-h-[calc(100vh/1.5)] self-center rounded-3xl object-contain object-center px-1.5"
+
                   />
                 </AnimatePresence>
               </motion.div>

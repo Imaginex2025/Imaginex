@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const CARD_DATA = [
   {
     id: 1,
-    imgUrl: "Qualcom.jpg",
+    imgUrl: "BgQ2.png",
     title: "Qualcomm",
     content: "Generates 60–70% of its profits from patent licensing and royalty fees.",
   },

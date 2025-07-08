@@ -119,7 +119,7 @@ const data = [
         transformStyle: "preserve-3d",
         boxShadow,
       }}
-      className="w-full md:w-full lg:w-[31%] flex flex-col bg-gradient-to-b from-[#0E0A0F] to-[#211824] p-6 rounded-lg will-change-transform transition-transform duration-200"
+      className="w-full md:w-full lg:w-[31%] flex flex-col bg-gradient-to-b from-[#0E0A0F] to-[#211824] p-6 rounded-lg will-change-transform "
     >
       <div className="flex items-center mb-4">
         <div className="w-[32px] h-[32px] sm:w-[65px] sm:h-[65px] bg-[#221924] rounded flex items-center justify-center">
