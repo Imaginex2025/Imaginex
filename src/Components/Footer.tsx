@@ -1,29 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ContactUsPopup from "./Popup/ContactUs";
 
 const Footer = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
-  const [scrollTarget, setScrollTarget] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (scrollTarget) {
-      const timeout = setTimeout(() => {
-        const element = document.getElementById(scrollTarget);
-        if (element) {
-          const y = element.getBoundingClientRect().top + window.pageYOffset - 100;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-        setScrollTarget(null);
-      }, 300);
-      return () => clearTimeout(timeout);
-    }
-  }, [scrollTarget]);
 
   const handleFooterNavClick = (sectionId: string) => {
-    navigate("/");
-    setScrollTarget(sectionId.toLowerCase());
+    navigate("/", { state: { scrollTo: sectionId.toLowerCase() } });
   };
 
   return (
@@ -31,12 +15,10 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between gap-10 pb-0 px-5 sm:px-20 py-10">
         {/* Logo & Description */}
         <div className="flex-1 h-full flex flex-col justify-end">
-            <img src="/Logo-edit.png" alt="logo" className="w-35 mb-4" />
-
+          <img src="/img.png" alt="logo" className="w-35 mb-4" />
           <p className="text-xs sm:text-sm text-gray-300">
             ImagineX is a True Human Enterprise — where ideas become patents, patents into products, and innovation serves humanity.
           </p>
-          <p className="text-[11px] mt-10 ">* Based on our internal research  through the internet</p>
         </div>
 
         {/* Navigation Links */}
@@ -44,12 +26,12 @@ const Footer = () => {
           <ul className="flex cursor-pointer flex-col gap-2 md:items-center text-xs sm:text-sm">
             {["Home", "About", "Pillars"].map((link) => (
               <li key={link}>
-                <a
+                <button
                   onClick={() => handleFooterNavClick(link)}
-                  className="hover:text-purple-400 transition-colors duration-200"
+                  className="hover:text-purple-400 transition-colors duration-200 bg-transparent border-none p-0 m-0 text-left"
                 >
                   {link}
-                </a>
+                </button>
               </li>
             ))}
             <li
@@ -64,18 +46,10 @@ const Footer = () => {
         {/* Services */}
         <div className="flex-1">
           <ul className="flex flex-col gap-2 text-xs sm:text-sm">
-            <Link to="/Ip" className="hover:text-purple-400 transition-colors duration-200">
-              Patent Tech and Consulting
-            </Link>
-            <Link to="/infringement" className="hover:text-purple-400 transition-colors duration-200">
-              Infringement Analysis and Enforcement
-            </Link>
-            <Link to="/insights" className="hover:text-purple-400 transition-colors duration-200">
-              Patent Insights and Analytics
-            </Link>
-            <Link to="/monitization" className="hover:text-purple-400 transition-colors duration-200">
-              Patent Monetization and Licensing
-            </Link>
+            <Link to="/Ip" className="hover:text-purple-400 transition-colors duration-200">Patent Tech and Consulting</Link>
+            <Link to="/infringement" className="hover:text-purple-400 transition-colors duration-200">Infringement Analysis and Enforcement</Link>
+            <Link to="/insights" className="hover:text-purple-400 transition-colors duration-200">Patent Insights and Analytics</Link>
+            <Link to="/monitization" className="hover:text-purple-400 transition-colors duration-200">Patent Monetization and Licensing</Link>
           </ul>
         </div>
 
@@ -83,15 +57,12 @@ const Footer = () => {
         <div className="flex-1">
           <ul className="flex flex-col justify-end gap-2 md:items-end text-xs sm:text-sm">
             <li>
-              <a
-                href="mailto:info@theimaginex.com"
-                className="hover:text-purple-400 transition-colors duration-200"
-              >
+              <a href="mailto:info@theimaginex.com" className="hover:text-purple-400 transition-colors duration-200">
                 info@theimaginex.com
               </a>
               <div className="mt-2">
                 <div className="bg-[#AF2ECB] cursor-pointer justify-end w-6 flex p-1 rounded-[3px] hover:brightness-110 transition duration-200">
-                  <a target="_blank" href="https://www.linkedin.com/company/theimaginex">
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/theimaginex">
                     <img src="/linkedin.png" alt="linkedin" className="w-4 h-4" />
                   </a>
                 </div>

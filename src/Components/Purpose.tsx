@@ -84,7 +84,7 @@ const Purpose = () => {
         viewport={{ once: true }}
       >
         <p className="font-medium text-[10px] sm:text-[14px] lg:text-[16px] text-[#F8E9FE] mx-auto max-w-3xl">
-          Discover the four pillars that define THE ImagineX’s mission to empower humanity through innovation and technology.
+          Discover the four pillars that define  ImagineX’s mission to empower humanity through innovation and technology.
         </p>
       </motion.div>
 

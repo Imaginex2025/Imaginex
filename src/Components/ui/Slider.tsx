@@ -55,9 +55,9 @@ const TechStacksScroller: React.FC = () => {
   }, [progressMotion]);
 
   const currentImage = useMemo(() => {
-    if (progress <= 100) return "/qhd.png";
-    if (progress > 100 && progress <= 200) return "/dolby3d.png";
-    return "/final.jpg";
+    if (progress <= 100) return "/1.png";
+    if (progress > 100 && progress <= 200) return "/3.png";
+    return "/2.png";
   }, [progress]);
 
   return (
@@ -66,7 +66,6 @@ const TechStacksScroller: React.FC = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      id="training"
       transition={{ duration: 1 }}
     >
       {/* Heading */}

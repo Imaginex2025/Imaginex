@@ -29,7 +29,7 @@ const Hero = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      id="home"
+     
       className="relative overflow-hidden w-full h-[90vh]  flex items-center justify-center"
     >
       {/* ✅ Background: Particles */}

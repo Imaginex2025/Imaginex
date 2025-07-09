@@ -44,7 +44,7 @@ const Navbar = () => {
       {/* Desktop Navbar */}
       <div className="hidden md:flex items-center border-b py-5 border-[#2E2132] justify-between px-10  relative">
         <div>
-          <img src="/Logo-edit.png" alt="logo" className="h-[50px]" />
+          <img src="/img.png" alt="logo" className="h-[50px]" />
          
         </div>
         <ul className="flex items-center gap-8 text-white alex relative">
@@ -53,7 +53,7 @@ const Navbar = () => {
           </Link>
 
          {!hideTraining && (
-              <li onClick={() => scrollToElementByIdWithOffset("inovators")} className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Training</li>
+              <li onClick={() => scrollToElementByIdWithOffset("training")} className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Training</li>
           )}
 
          <Link to="/IP" className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Patent Gym</Link>
@@ -69,13 +69,10 @@ const Navbar = () => {
             </li>
             {isServicesHovered && (
               <div className="absolute top-full left-0 mt-2 w-64 bg-[#211824] border border-[#3a2d3c] rounded-lg shadow-lg py-4 z-50">
-                <ul className="flex flex-col px-4 gap-3 text-sm text-white text-start">
-                  
+                <ul className="flex flex-col px-4 gap-3 text-sm text-white text-start">    
                   <Link to="/infringement" className="hover:text-[#DC7FF3] transition cursor-pointer">Infringement Analysis and Enforcement</Link>
                   <Link to="/insights" className="hover:text-[#DC7FF3] transition cursor-pointer">Patent Insights and Analytics</Link>
                   <Link to="/monitization" className="hover:text-[#DC7FF3] transition cursor-pointer">Patent Monetization and Licensing</Link>
-
-
                 </ul>
               </div>
             )}
@@ -84,7 +81,7 @@ const Navbar = () => {
         </ul>
         <button
           onClick={() => setIsOpen2(true)}
-          className="rounded-[6px] alex px-5 flex py-3 items-center gap-2  shadow-[inset_0_0_9px_1px_#DC7FF3] hover:brightness-110 transition"
+          className="rounded-[6px] alex px-5 cursor-pointer flex py-3 items-center gap-2  shadow-[inset_0_0_9px_1px_#DC7FF3] hover:brightness-110 transition"
         >
           <p>Contact Us</p>
           <img src="/contact-icon.svg" alt="contact" />
@@ -94,7 +91,7 @@ const Navbar = () => {
       {/* Mobile Top Bar */}
       <div className="flex md:hidden items-center border-b py-2 border-[#2E2132] justify-between px-6  md:py-4">
         <div>
-          <img src="/Logo-edit.png" alt="logo" className="h-[50px]" />
+          <img src="/img.png" alt="logo" className="h-[50px]" />
 
         </div>
         <div className="cursor-pointer" onClick={() => setIsOpen(true)}>
@@ -138,7 +135,7 @@ const Navbar = () => {
 
 
           {!hideTraining && (
-            <li onClick={() => scrollToElementByIdWithOffset("inovators")} className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
+            <li onClick={() => scrollToElementByIdWithOffset("training")} className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
               <img src="/ecosystem-icon.svg" className="w-6 h-6" alt="Training" />
               Training
             </li>

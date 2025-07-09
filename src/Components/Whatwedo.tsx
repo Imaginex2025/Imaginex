@@ -6,7 +6,7 @@ const Whatwedo = () => {
     <motion.div
       className="bg-[url('/grid-bg.svg')] bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-2 md:gap-5 justify-center items-center text-center"
       initial={{ opacity: 0 }}
-      id='about'
+      
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 1 }}
@@ -29,7 +29,7 @@ const Whatwedo = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <p className="font-medium text-[10px] sm:text-[14px] mb-2 md:mb-0 lg:text-[16px] text-[#F8E9FE] mx-auto">
-          Build. Patent. Launch. Lead – With THE ImagineX.
+          Build. Patent. Launch. Lead – With  ImagineX.
         </p>
       </motion.div>
 
@@ -71,7 +71,7 @@ const Whatwedo = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.4 }}
           >
-            THE ImagineX is a future-focused innovation company driven by the mission to Empowering Humanity through Innovation and Technology (M-HIT). We help transform ideas into patents, and patents into real-world solutions.
+             ImagineX is a future-forward  patent intelligence innovation company driven by the mission to Empowering Humanity through Innovation and Technology (M-HIT). We help transform ideas into patents, and patents into real-world solutions.
 
 Our four core pillars—Patent Tech Consulting, Innovation & Product Development, and Technology Training—enable startups, enterprises, and individuals to unlock IP value, build impactful products, and stay competitive in the age of AI.
 
