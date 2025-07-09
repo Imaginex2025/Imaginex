@@ -22,7 +22,7 @@ const ContactUsPopup = ({ onClose }: { onClose: () => void }) => {
 
     const data = {
       ...formData,
-      access_key: "dac2c29c-df63-4f86-9efb-925740290f61",
+      access_key: "6a481594-b8a4-4192-ac75-86150878e858",
     };
 
     const res = await fetch("https://api.web3forms.com/submit", {
