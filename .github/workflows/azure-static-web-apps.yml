@@ -49,7 +49,7 @@ jobs:
           api_location: "" 
           output_location: "dist"
           ###### End of Repository/Build Configurations ######
-          skip_app_build: false
+          skip_app_build: true
           production_branch: "main"
 
   close_pull_request_job:
