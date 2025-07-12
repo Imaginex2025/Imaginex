@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import ContactUsPopup from "./Popup/ContactUs";
+import ContactUsPopup from "./Popup/ContactUs.tsx";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // Mobile sidebar

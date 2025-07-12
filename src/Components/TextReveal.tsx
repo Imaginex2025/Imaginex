@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { TextRevealCard } from "../Components/ui/text-reveal-card";
+import { TextRevealCard } from "../Components/ui/text-reveal-card.tsx";
 
 export function TextRevealCardPreview() {
   return (

@@ -1,7 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
-import { Component } from "./ui/Comp";
+import { Component } from "./ui/Comp.tsx";
 
 const data = [
   {

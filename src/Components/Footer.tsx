@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ContactUsPopup from "./Popup/ContactUs";
+import ContactUsPopup from "./Popup/ContactUs.tsx";
 
 const Footer = () => {
   const navigate = useNavigate();

@@ -1,4 +1,4 @@
-"use client";
+
 import React, { useRef, useState, memo } from "react";
 import { motion } from "motion/react";
 import { twMerge } from "tailwind-merge";

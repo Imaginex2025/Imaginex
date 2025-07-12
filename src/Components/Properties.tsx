@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
-import { Rolling } from "./ui/Rolling";
-import { Rollingleft } from "./ui/Rollingleft";
+import { Rolling } from "./ui/Rolling.tsx";
+import { Rollingleft } from "./ui/Rollingleft.tsx";
 
 const Properties = () => {
   return (

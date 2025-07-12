@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import FlowingMenu from '../blocks/Components/FlowingMenu/FlowingMenu';
+import FlowingMenu from '../blocks/Components/FlowingMenu/FlowingMenu.tsx';
 
 const demoItems = [
   { 

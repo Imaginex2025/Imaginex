@@ -1,4 +1,4 @@
-import { InfiniteMovingCards } from "./infinite-moving-cards";
+import { InfiniteMovingCards } from "./infinite-moving-cards.tsx";
 
 export function Rollingleft() {
   return (

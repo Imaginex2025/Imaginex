@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Card from "../Components/ui/carousel-card-1";
+import Card from "../Components/ui/carousel-card-1.tsx";
 
 const CARD_DATA = [
   {

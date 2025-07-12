@@ -1,13 +1,13 @@
 
 import './App.css'
-import Home from './Pages/Home'
-import ScrollToTop from './Utils/ScrollToTop'
+import Home from './Pages/Home.tsx'
+import ScrollToTop from './Utils/ScrollToTop.ts'
 import { Routes,Route } from 'react-router-dom'
-import { IPStrategyProcess } from './Pages/Service'
-import { Service1 } from './Pages/Service1'
-import { Service2 } from './Pages/Service2'
-import { Service3 } from './Pages/Service3'
-import { Service4 } from './Pages/Service4'
+import { IPStrategyProcess } from './Pages/Service.tsx'
+import { Service1 } from './Pages/Service1.tsx'
+import { Service2 } from './Pages/Service2.tsx'
+import { Service3 } from './Pages/Service3.tsx'
+import { Service4 } from './Pages/Service4.tsx'
 
 function App() {
 

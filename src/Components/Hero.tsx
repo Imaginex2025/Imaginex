@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import Particles from "../blocks/Backgrounds/Particles/Particles";
+import Particles from "../blocks/Backgrounds/Particles/Particles.tsx";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement | null>(null);

@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import Footer from '../Components/Footer';
-import Hero from '../Components/Hero';
-import Innovation from '../Components/Innovation';
-import Innovators from '../Components/Inovators';
-import Navbar from '../Components/Navbar';
-import Properties from '../Components/Properties';
-import Purpose from '../Components/Purpose';
-import TechStacksScroller from '../Components/ui/Slider';
-import Venture from '../Components/Venture';
-import Whatwedo from '../Components/Whatwedo';
+import Footer from '../Components/Footer.tsx';
+import Hero from '../Components/Hero.tsx';
+import Innovation from '../Components/Innovation.tsx';
+import Innovators from '../Components/Inovators.tsx';
+import Navbar from '../Components/Navbar.tsx';
+import Properties from '../Components/Properties.tsx';
+import Purpose from '../Components/Purpose.tsx';
+import TechStacksScroller from '../Components/ui/Slider.tsx';
+import Venture from '../Components/Venture.tsx';
+import Whatwedo from '../Components/Whatwedo.tsx';
 
 const Home = () => {
   const location = useLocation();
