@@ -27,8 +27,8 @@ export default defineConfig({
     },
     // Ensure source maps are generated for debugging
     sourcemap: true,
-    // Optimize for production
-    minify: 'terser',
+    // Use esbuild for minification (faster and no extra dependency needed)
+    minify: 'esbuild',
     target: 'es2020'
   },
   
