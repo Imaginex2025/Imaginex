@@ -49,7 +49,7 @@ const Navbar = () => {
         </div>
         <ul className="flex items-center gap-8 text-white alex relative">
           <Link to="/" className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">
-            <li className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Home</li>
+            <li  onClick={() => scrollToElementByIdWithOffset("home")} className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Home</li>
           </Link>
 
          {!hideTraining && (
