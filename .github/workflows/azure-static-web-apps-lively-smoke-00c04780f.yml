@@ -47,6 +47,7 @@ jobs:
           api_location: ""
           output_location: "dist"
           skip_app_build: true # Skip Azure's build since we built it ourselves
+          config_file_location: "/"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
