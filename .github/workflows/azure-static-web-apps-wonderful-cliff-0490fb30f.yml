@@ -28,10 +28,25 @@ jobs:
       
       - name: Install dependencies
         run: npm ci
-
-      - name: Build application (with config copy)
+        
+      - name: Build application
         run: npm run build
-
+        
+      - name: Verify build output
+        run: |
+          echo "=== Checking if critical files exist ==="
+          ls -la dist/index.html
+          ls -la dist/assets/index-CDWR021L.js
+          ls -la dist/assets/vendor-1zw1pNgy.js
+          ls -la dist/assets/index-DNMbEjef.css
+          ls -la dist/staticwebapp.config.json
+          echo ""
+          echo "=== File sizes ==="
+          du -h dist/assets/*
+          echo ""
+          echo "=== Index.html script references ==="
+          grep -n "assets/" dist/index.html
+      
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
