@@ -23,7 +23,7 @@ const demoItems = [
 const PowerPatent = () => {
   return (
         <motion.div
-      className="bg-[url('/grid-bg.svg')] bg-cover bg-center  py-[30px]  sm:py-[100px]  lg:py-[60px] flex flex-col gap-2 md:gap-5 justify-center items-center text-center"
+      className="  bg-cover bg-center  py-[30px]  sm:py-[100px]  lg:py-[60px] flex flex-col gap-2 md:gap-5 justify-center items-center text-center"
       initial={{ opacity: 0 }}
       id="about"
       whileInView={{ opacity: 1 }}
