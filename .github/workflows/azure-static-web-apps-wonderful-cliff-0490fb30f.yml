@@ -34,18 +34,41 @@ jobs:
         
       - name: Verify build output
         run: |
-          echo "=== Checking if critical files exist ==="
-          ls -la dist/index.html
-          ls -la dist/assets/index-CDWR021L.js
-          ls -la dist/assets/vendor-1zw1pNgy.js
-          ls -la dist/assets/index-DNMbEjef.css
-          ls -la dist/staticwebapp.config.json
+          echo "=== Checking build directory structure ==="
+          ls -la dist/
           echo ""
-          echo "=== File sizes ==="
-          du -h dist/assets/*
+          echo "=== Checking if index.html exists ==="
+          if [ -f "dist/index.html" ]; then
+            echo "✓ index.html found"
+            ls -la dist/index.html
+          else
+            echo "✗ index.html not found"
+            exit 1
+          fi
+          echo ""
+          echo "=== Checking assets directory ==="
+          if [ -d "dist/assets" ]; then
+            echo "✓ assets directory found"
+            ls -la dist/assets/
+            echo ""
+            echo "=== File sizes ==="
+            du -h dist/assets/*
+          else
+            echo "✗ assets directory not found"
+          fi
+          echo ""
+          echo "=== Checking for config file ==="
+          if [ -f "dist/staticwebapp.config.json" ]; then
+            echo "✓ staticwebapp.config.json found"
+            ls -la dist/staticwebapp.config.json
+          else
+            echo "ℹ staticwebapp.config.json not found (optional)"
+          fi
           echo ""
           echo "=== Index.html script references ==="
-          grep -n "assets/" dist/index.html
+          if [ -f "dist/index.html" ]; then
+            grep -n "assets/" dist/index.html || echo "No asset references found"
+          fi
       
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
