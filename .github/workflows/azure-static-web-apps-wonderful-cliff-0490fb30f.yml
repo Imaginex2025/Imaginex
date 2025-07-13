@@ -20,22 +20,18 @@ jobs:
           submodules: true
           lfs: false
       
-      # Setup Node.js 20 (required for your dependencies)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
       
-      # Install dependencies
       - name: Install dependencies
         run: npm ci
-      
-      # Build the application
-      - name: Build application
+
+      - name: Build application (with config copy)
         run: npm run build
-      
-      # Deploy to Azure Static Web Apps
+
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -46,7 +42,7 @@ jobs:
           app_location: "/"
           api_location: ""
           output_location: "dist"
-          skip_app_build: true # Skip Azure's build since we built it ourselves
+          skip_app_build: true
           config_file_location: "/"
 
   close_pull_request_job:
