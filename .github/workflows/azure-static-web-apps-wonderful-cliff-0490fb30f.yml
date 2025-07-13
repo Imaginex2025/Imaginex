@@ -20,7 +20,7 @@ jobs:
           submodules: true
           lfs: false
       
-      # Setup Node.js 20
+      # Setup Node.js 20 (required for your dependencies)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -34,7 +34,7 @@ jobs:
       # Build the application
       - name: Build application
         run: npm run build
-
+      
       # Deploy to Azure Static Web Apps
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
@@ -43,11 +43,11 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_CLIFF_0490FB30F }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/"                    # Root of your app
-          api_location: ""                     # No API in this project
-          output_location: "dist"              # Vite outputs here
-          config_file_location: "/"            # Look for staticwebapp.config.json inside dist/
-          # ❌ Removed skip_app_build: true so config is applied properly
+          app_location: "/"
+          api_location: ""
+          output_location: "dist"
+          skip_app_build: true # Skip Azure's build since we built it ourselves
+          config_file_location: "/"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
