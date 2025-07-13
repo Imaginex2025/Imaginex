@@ -1,24 +1,57 @@
 {
   "routes": [
     {
-      "route": "/assets/*.js",
+      "route": "/assets/index-*.js",
       "headers": {
-        "Content-Type": "application/javascript",
-        "Cache-Control": "public, max-age=31536000, immutable"
+        "Content-Type": "text/javascript; charset=utf-8",
+        "Access-Control-Allow-Origin": "*"
       }
     },
     {
-      "route": "/assets/*.mjs",
+      "route": "/assets/vendor-*.js",
       "headers": {
-        "Content-Type": "application/javascript",
-        "Cache-Control": "public, max-age=31536000, immutable"
+        "Content-Type": "text/javascript; charset=utf-8",
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    {
+      "route": "/assets/router-*.js",
+      "headers": {
+        "Content-Type": "text/javascript; charset=utf-8",
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    {
+      "route": "/assets/animations-*.js",
+      "headers": {
+        "Content-Type": "text/javascript; charset=utf-8",
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    {
+      "route": "/assets/webgl-*.js",
+      "headers": {
+        "Content-Type": "text/javascript; charset=utf-8",
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    {
+      "route": "/assets/ui-*.js",
+      "headers": {
+        "Content-Type": "text/javascript; charset=utf-8",
+        "Access-Control-Allow-Origin": "*"
       }
     },
     {
       "route": "/assets/*.css",
       "headers": {
-        "Content-Type": "text/css",
-        "Cache-Control": "public, max-age=31536000, immutable"
+        "Content-Type": "text/css; charset=utf-8"
+      }
+    },
+    {
+      "route": "/vite.svg",
+      "headers": {
+        "Content-Type": "image/svg+xml"
       }
     },
     {
@@ -31,8 +64,8 @@
     "rewrite": "/index.html",
     "exclude": [
       "/assets/*",
+      "/vite.svg",
       "*.js",
-      "*.mjs",
       "*.css",
       "*.map",
       "*.json",
@@ -41,34 +74,23 @@
       "*.jpg",
       "*.jpeg",
       "*.gif",
-      "*.svg",
-      "*.woff",
-      "*.woff2",
-      "*.ttf",
-      "*.eot"
+      "*.svg"
     ]
   },
   "mimeTypes": {
-    ".js": "application/javascript",
-    ".mjs": "application/javascript",
-    ".jsx": "application/javascript",
-    ".json": "application/json",
+    ".js": "text/javascript",
+    ".mjs": "text/javascript",
     ".css": "text/css",
+    ".json": "application/json",
     ".svg": "image/svg+xml",
     ".png": "image/png",
     ".jpg": "image/jpeg",
     ".jpeg": "image/jpeg",
     ".gif": "image/gif",
-    ".ico": "image/x-icon",
-    ".woff": "font/woff",
-    ".woff2": "font/woff2",
-    ".ttf": "font/ttf",
-    ".eot": "application/vnd.ms-fontobject"
+    ".ico": "image/x-icon"
   },
   "globalHeaders": {
-    "X-Content-Type-Options": "nosniff",
-    "X-Frame-Options": "DENY",
-    "X-XSS-Protection": "1; mode=block"
+    "X-Content-Type-Options": "nosniff"
   },
   "responseOverrides": {
     "404": {
