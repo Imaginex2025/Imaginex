@@ -33,7 +33,7 @@ export default defineConfig({
   },
   
   // Ensure proper base path for Azure Static Web Apps
-  base: './',
+  base: '/',
   
   // Development server configuration
   server: {
