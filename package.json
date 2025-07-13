@@ -6,6 +6,7 @@
 "scripts": {
   "dev": "vite",
   "build": "vite build && cp staticwebapp.config.json dist/",
+  "postbuild": "cp routes.json dist/",
   "lint": "eslint .",
   "check": "tsc --noEmit",
   "preview": "vite preview"

@@ -1,0 +1,6 @@
+{
+  "route": "/assets/*.js",
+  "headers": {
+    "Content-Type": "application/javascript"
+  }
+}
