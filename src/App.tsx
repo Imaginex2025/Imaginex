@@ -1,5 +1,4 @@
-
-import './App.css'
+import "./App.css"
 import Home from './Pages/Home.tsx'
 import ScrollToTop from './Utils/ScrollToTop.ts'
 import { Routes,Route } from 'react-router-dom'
@@ -15,7 +14,8 @@ function App() {
   return (
 <>
 <ScrollToTop/>
-    <Routes>
+
+<Routes>
       <Route path="/*" element={<Home />} />
       <Route path="/" element={<Home />} />
       <Route path='/Ip' element={<IPStrategyProcess/>} />
@@ -23,7 +23,7 @@ function App() {
       <Route path='/insights' element={<Service2/>} />
       <Route path='/monitization' element={<Service3/>} />
       <Route path='/Itservices' element={<Service4/>} />
-    </Routes>
+</Routes>
 
     </>
   )

@@ -148,7 +148,7 @@ const Innovation = () => {
   return (
     <div
       
-      className="bg-[url('./grig-bg.svg')] bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-5 justify-center items-center text-center"
+      className="bg-[url('/grig-bg.svg')] bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-5 justify-center items-center text-center"
     >
             <motion.div
         initial={{ y: -30, opacity: 0 }}
