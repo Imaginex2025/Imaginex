@@ -1,57 +1,15 @@
 {
   "routes": [
     {
-      "route": "/assets/index-*.js",
+      "route": "/assets/*.js",
       "headers": {
-        "Content-Type": "text/javascript; charset=utf-8",
-        "Access-Control-Allow-Origin": "*"
+        "Content-Type": "application/javascript"
       }
     },
     {
-      "route": "/assets/vendor-*.js",
+      "route": "/assets/*.mjs",
       "headers": {
-        "Content-Type": "text/javascript; charset=utf-8",
-        "Access-Control-Allow-Origin": "*"
-      }
-    },
-    {
-      "route": "/assets/router-*.js",
-      "headers": {
-        "Content-Type": "text/javascript; charset=utf-8",
-        "Access-Control-Allow-Origin": "*"
-      }
-    },
-    {
-      "route": "/assets/animations-*.js",
-      "headers": {
-        "Content-Type": "text/javascript; charset=utf-8",
-        "Access-Control-Allow-Origin": "*"
-      }
-    },
-    {
-      "route": "/assets/webgl-*.js",
-      "headers": {
-        "Content-Type": "text/javascript; charset=utf-8",
-        "Access-Control-Allow-Origin": "*"
-      }
-    },
-    {
-      "route": "/assets/ui-*.js",
-      "headers": {
-        "Content-Type": "text/javascript; charset=utf-8",
-        "Access-Control-Allow-Origin": "*"
-      }
-    },
-    {
-      "route": "/assets/*.css",
-      "headers": {
-        "Content-Type": "text/css; charset=utf-8"
-      }
-    },
-    {
-      "route": "/vite.svg",
-      "headers": {
-        "Content-Type": "image/svg+xml"
+        "Content-Type": "application/javascript"
       }
     },
     {
@@ -60,42 +18,12 @@
       "statusCode": 200
     }
   ],
+  "mimeTypes": {
+    ".js": "application/javascript",
+    ".mjs": "application/javascript"
+  },
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": [
-      "/assets/*",
-      "/vite.svg",
-      "*.js",
-      "*.css",
-      "*.map",
-      "*.json",
-      "*.ico",
-      "*.png",
-      "*.jpg",
-      "*.jpeg",
-      "*.gif",
-      "*.svg"
-    ]
-  },
-  "mimeTypes": {
-    ".js": "text/javascript",
-    ".mjs": "text/javascript",
-    ".css": "text/css",
-    ".json": "application/json",
-    ".svg": "image/svg+xml",
-    ".png": "image/png",
-    ".jpg": "image/jpeg",
-    ".jpeg": "image/jpeg",
-    ".gif": "image/gif",
-    ".ico": "image/x-icon"
-  },
-  "globalHeaders": {
-    "X-Content-Type-Options": "nosniff"
-  },
-  "responseOverrides": {
-    "404": {
-      "rewrite": "/index.html",
-      "statusCode": 200
-    }
+    "exclude": ["/assets/*"]
   }
 }
