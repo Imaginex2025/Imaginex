@@ -68,7 +68,14 @@ const TechStacksScroller: React.FC = () => {
       viewport={{ once: true }}
       transition={{ duration: 1 }}
     >
-      {/* Heading */}
+
+
+      {/* Scrollable Space with 100px buffer at bottom */}
+      <div >
+        <div ref={scrollRef} className="scroll-space h-[3000px] relative">
+          
+          <div className="outer-container-for-scroller w-full mx-auto max-w-[1290px] px-4 md:px-6 lg:px-8 sticky top-18 md:top-32 z-50">
+                  {/* Heading */}
       <motion.div
         initial={{ y: -30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -85,15 +92,10 @@ const TechStacksScroller: React.FC = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        <p className="font-medium text-[10px] sm:text-[14px] lg:text-[16px] text-[#F8E9FE] mx-auto max-w-3xl">
+        <p className="font-medium pb-5 md:pb-10 text-[10px] sm:text-[14px] lg:text-[16px] text-[#F8E9FE] mx-auto max-w-3xl">
           How industry leaders harness IP for long-term success - including but not limited to the below
         </p>
       </motion.div>
-
-      {/* Scrollable Space with 100px buffer at bottom */}
-      <div >
-        <div ref={scrollRef} className="scroll-space h-[3000px] relative">
-          <div className="outer-container-for-scroller w-full mx-auto max-w-[1290px] px-4 md:px-6 lg:px-8 sticky top-18 md:top-32 z-50">
             <div className="floating-container flex flex-col md:flex-row gap-8 w-full">
               {/* Left Side */}
               <div className="left-side flex flex-col mt-10 flex-5 gap-4 md:gap-8 w-full">
