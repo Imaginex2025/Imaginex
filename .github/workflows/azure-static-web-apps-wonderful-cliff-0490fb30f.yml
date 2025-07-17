@@ -70,27 +70,25 @@ jobs:
             grep -n "assets/" dist/index.html || echo "No asset references found"
           fi
       
-      - name: Deploy to Azure Static Web Apps
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
+      - name: Deleting and Uploading exiting blobs in $web contaier
+        uses: azure/CLI@v2
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_CLIFF_0490FB30F }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/"
-          api_location: ""
-          output_location: "dist"
-          skip_app_build: true
-          config_file_location: "/"
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_CLIFF_0490FB30F }}
-          action: "close"
+          azcliversion: latest
+          inlineScript: |
+            echo "Intiating deletion of old blobs from $web..."
+            az storage blob delete-batch \
+              --account-name "${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}" \
+              --sas-token "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
+              --delete-snapshots include \
+              --source "\$web"
+            
+            echo "Uploading new files to \$web container..."
+            az storage blob upload-batch \
+              --account-name "${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}" \
+              --destination "\$web" \
+              --source "dict" \
+              --overwrite \
+              --sas-token "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" 
+        
+            echo "Deployment completed successfully!"
+            echo "Your website should be available at: https://${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}.z13.web.core.windows.net/"
