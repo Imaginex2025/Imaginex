@@ -92,6 +92,6 @@ jobs:
         
             echo "Deployment completed successfully!"
             echo "Your website should be available at: https://${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}.z13.web.core.windows.net/"
-          env:
-            AZURE_STORAGE_ACCOUNT_NAME: ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
-            AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+        env:
+          AZURE_STORAGE_ACCOUNT_NAME: ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
