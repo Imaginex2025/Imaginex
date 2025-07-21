@@ -45,7 +45,6 @@ const Navbar = () => {
       <div className="hidden md:flex items-center border-b py-5 border-[#2E2132] justify-between px-10  relative">
         <div>
           <img src="/img.png" alt="logo" className="h-[50px]" />
-         
         </div>
         <ul className="flex items-center gap-8 text-white alex relative">
           <Link to="/" className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">

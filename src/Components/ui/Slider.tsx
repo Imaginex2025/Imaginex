@@ -45,59 +45,64 @@ const TechStacksScroller: React.FC = () => {
   const [progress, setProgress] = useState(0);
 
   useMotionValueEvent(progressMotion, "change", (v) => {
-    setProgress(Math.min(v, 300)); // Clamp to 400
+    setProgress(Math.min(v, 300));
   });
 
+  // ✅ Preload images on initial render
   useEffect(() => {
-    progressMotion.on("change", (value) => {
-      console.log("Scroll Progress:", value);
+    const images = [
+      "/dolbyupdated.jpg",
+      "/qualcomupdated.jpg",
+      "/armupdated.jpg",
+    ];
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
     });
-  }, [progressMotion]);
+  }, []);
 
   const currentImage = useMemo(() => {
-    if (progress <= 100) return "/1.png";
-    if (progress > 100 && progress <= 200) return "/3.png";
-    return "/2.png";
+    if (progress <= 100) return "/dolbyupdated.jpg";
+    if (progress > 100 && progress <= 200) return "/qualcomupdated.jpg";
+    return "/armupdated.jpg";
   }, [progress]);
 
   return (
     <motion.div
-      className="  bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-5 justify-center items-center text-center"
+      className="bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-5 justify-center items-center text-center"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 1 }}
     >
-
-
-      {/* Scrollable Space with 100px buffer at bottom */}
-      <div >
+      {/* Scrollable Space */}
+      <div>
         <div ref={scrollRef} className="scroll-space h-[3000px] relative">
-          
           <div className="outer-container-for-scroller w-full mx-auto max-w-[1290px] px-4 md:px-6 lg:px-8 sticky top-18 md:top-32 z-50">
-                  {/* Heading */}
-      <motion.div
-        initial={{ y: -30, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px] bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
-          The Power of Patents
-        </p>
-      </motion.div>
+            {/* Heading */}
+            <motion.div
+              initial={{ y: -30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px] bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
+                The Power of Patents
+              </p>
+            </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        viewport={{ once: true }}
-      >
-        <p className="font-medium pb-5 md:pb-10 text-[10px] sm:text-[14px] lg:text-[16px] text-[#F8E9FE] mx-auto max-w-3xl">
-          How industry leaders harness IP for long-term success - including but not limited to the below
-        </p>
-      </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <p className="font-medium pb-5 md:pb-10 text-[10px] sm:text-[14px] lg:text-[16px] text-[#F8E9FE] mx-auto max-w-3xl">
+                How industry leaders harness IP for long-term success - including but not limited to the below
+              </p>
+            </motion.div>
+
             <div className="floating-container flex flex-col md:flex-row gap-8 w-full">
-              {/* Left Side */}
+              {/* Left Column */}
               <div className="left-side flex flex-col mt-10 flex-5 gap-4 md:gap-8 w-full">
                 <TechStack
                   loadingPercentage={progress}
@@ -125,7 +130,7 @@ const TechStacksScroller: React.FC = () => {
                 />
               </div>
 
-              {/* Right Side (Image Viewer) */}
+              {/* Right Column - Image */}
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -143,7 +148,6 @@ const TechStacksScroller: React.FC = () => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.4 }}
                     className="w-full h-auto max-h-[calc(100vh/3)] md:max-h-[calc(100vh/1.5)] self-center rounded-3xl object-contain object-center px-1.5"
-
                   />
                 </AnimatePresence>
               </motion.div>

@@ -4,19 +4,19 @@ import Card from "../Components/ui/carousel-card-1.tsx";
 const CARD_DATA = [
   {
     id: 1,
-    imgUrl: 'qualcomm .jpg',
+    imgUrl: '/qualcomupdated.jpg',
     content:
       'Generates 60–70% of its profits from patent licensing and royalty fees.',
   },
   {
     id: 2,
-    imgUrl: '/Dolby.png',
+    imgUrl: '/dolbyupdated.jpg',
     content:
       'Earns ~90% of revenue from licensing audio and visual technologies.',
   },
   {
     id: 3,
-    imgUrl: 'Arm.jpeg',
+    imgUrl: '/armupdated.jpg',
     content:
       'Over 90% of revenue comes from licensing its patented chip architectures.',
   }
