@@ -51,8 +51,9 @@ const TechStacksScroller: React.FC = () => {
   // ✅ Preload images on initial render
   useEffect(() => {
     const images = [
-      "/dolbyupdated.jpg",
       "/qualcomupdated.jpg",
+      "/dolbyupdated.jpg",
+      
       "/armupdated.jpg",
     ];
     images.forEach((src) => {
@@ -62,8 +63,8 @@ const TechStacksScroller: React.FC = () => {
   }, []);
 
   const currentImage = useMemo(() => {
-    if (progress <= 100) return "/dolbyupdated.jpg";
-    if (progress > 100 && progress <= 200) return "/qualcomupdated.jpg";
+    if (progress <= 100) return "/qualcomupdated.jpg" ;
+    if (progress > 100 && progress <= 200) return "/dolbyupdated.jpg";
     return "/armupdated.jpg";
   }, [progress]);
 
